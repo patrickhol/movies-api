@@ -1,11 +1,11 @@
 {
   "name": "movies-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Movies Service",
   "main": "index.ts",
   "scripts": {
     "build": "rimraf dist && parcel build app/index.ts --target node",
-    "start": "yarn build && node dist/index.js"
+    "dev": "yarn build && node dist/index.js"
   },
   "repository": {
     "type": "git",
