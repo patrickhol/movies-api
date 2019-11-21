@@ -1,8 +1,10 @@
 export const getMany = model => async (req, res) => {
   try {
+    const query = req.query.q ? new RegExp(req.query.q, 'i') : new RegExp('', 'i');
+    const limit = req.query._limit ? parseInt(req.query._limit, 10) : 1;
     const docs = await model
-      .find()
-      .limit(5)
+      .find({ title: query })
+      .limit(limit)
       .lean()
       .exec();
 
